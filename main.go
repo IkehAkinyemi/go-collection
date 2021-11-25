@@ -33,8 +33,12 @@ func main() {
 		_, err = fmt.Scanln(&username)
 
 		if err != nil {
-			usernames[name] = username
+			panic(err)
 		}
+
+		username = strings.TrimSpace(username)
+
+		usernames[name] = username
 
 		fmt.Printf("Your username has been updatedt to %q", username)
 		break
